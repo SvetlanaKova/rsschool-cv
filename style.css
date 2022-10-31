@@ -60,6 +60,7 @@ li {
 
 img {
   vertical-align: top;
+  max-width: 100%;
 }
 
 h1,
@@ -83,11 +84,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: rgb(118, 75, 54);
+  color: black;
   line-height: 1.8;
 }
 .header {
-  background-color: rgb(177, 115, 115);
+  background-color: #B0E5F9;
 }
 .nav-list {
   display: flex;
@@ -106,7 +107,7 @@ body {
   transition: color 0.5s;
 }
 .nav-item a:hover {
-  color: rgb(199, 22, 22);
+  color: black;
 }
 .photo {
   border-radius: 50%;
@@ -119,30 +120,63 @@ body {
 
 .main {
   display: flex;
-  flex: 0 1 50%;
 }
 .main-left {
   padding-top: 10px;
   padding-bottom: 20px;
 }
-
-h2,
-h1 {
+.main-left, 
+.main-right {
+  flex-basis: 50%;
+} 
+.main-right .section-title{
+  margin-right: 0;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+}
+.projects-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+figcaption{
+  position: relative;
+}
+.project-block__name{
+  font-size: 18px;
+}
+.project-block__description{
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  border-radius: 5px;
+}
+.project-block-img:hover ~ figcaption>.project-block__description{
+  display: block;
+  z-index: 2;
+}
+.section-title {
   text-transform: uppercase;
   margin: 20px 20px 20px 0;
-  background-color: rgb(177, 115, 115);
+  background-color: #B0E5F9;
   color: white;
   font-weight: 700;
   border-radius: 10px;
   padding: 10px;
 }
-
-img.project-block {
-  width: 300px;
+.project-block-img {
+  opacity: 0.3;
+  transition-property: opacity;
+  transition-duration: 0.2s;
 }
-
+.project-block-img:hover {
+  opacity: 1;
+}
 .footer {
-  background-color: rgb(177, 115, 115);
+  background-color: #B0E5F9;
 }
 .footer-container {
   display: flex;
